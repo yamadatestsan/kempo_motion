@@ -27,11 +27,11 @@ def estimate_image(imagefile, model='cmu', path='', resize='283x341', plt_networ
 
     w, h = model_wh(resize)
     if orientation == 'horizontal':
-        if w == 0: w = 283
-        if h == 0: h = 341
+        if w == 0: w = 1000
+        if h == 0: h = 1000
     else:
-        if w == 0: w = 341
-        if h == 0: h = 283
+        if w == 0: w = 1000
+        if h == 0: h = 1000
     e = TfPoseEstimator(get_graph_path(model), target_size=(w, h))
     logger.info('resize: %d,  %d' % (w, h))
     path_image = os.path.join(path, 'pictures', imagefile)
