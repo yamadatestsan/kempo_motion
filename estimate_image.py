@@ -14,7 +14,7 @@ from tf_pose.networks import get_graph_path, model_wh
 from modules.motion_analysis import MotionAnalysis
 
 
-def estimate_image(imagefile, model='cmu', path='', resize='432x368', plt_network=False,
+def estimate_image(imagefile, model='cmu', path='', resize='283x341', plt_network=False,
               cog="", cog_color='black', debug=False, resize_out_ratio=4.0, orientation='horizontal'):
     logger = logging.getLogger('TfPoseEstimator')
     logger.setLevel(logging.DEBUG) if debug else logger.setLevel(logging.INFO)
