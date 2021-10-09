@@ -99,7 +99,7 @@ def estimate_video(video, path='', resize='432x368', model='cmu',resize_out_rati
         if cog != 'skip':
             t = time.time()
             bodies_cog = ma.multi_bodies_cog(humans=humans)
-            bodies_cog[np.isnan(bodies_cog[:])] = 0
+            bodies_cog[np.isnan(bodies_cog[:, :])] = 0
             humans_feature = np.concatenate((np.c_[np.repeat(frame_no, len(a_humans))],
                                              a_humans.reshape(a_humans.shape[0], a_humans.shape[1] * a_humans.shape[2]),
                                              bodies_cog.reshape(bodies_cog.shape[0], bodies_cog.shape[1] * bodies_cog.shape[2])),axis=1)
