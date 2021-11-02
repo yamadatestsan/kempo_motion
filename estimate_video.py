@@ -19,7 +19,7 @@ fps_time = 0
 
 
 # if __name__ == '__main__':
-def estimate_video(video, path='', resize='432x368', model='cmu',resize_out_ratio=4.0, orientation='horizontal',
+def estimate_video(video, path='', resize='432x368', model='cmu',resize_out_ratio=4.0, orientation='vertical',
                    cog="", cog_color='black', showBG=True, start_frame=0, debug=False, plot_image=""):
     logger = logging.getLogger('TfPoseEstimator')
     logger.setLevel(logging.DEBUG) if debug else logger.setLevel(logging.INFO)
@@ -44,7 +44,7 @@ def estimate_video(video, path='', resize='432x368', model='cmu',resize_out_rati
     os.makedirs(path_csv_estimated, exist_ok=True)
 
     w, h = model_wh(resize)
-    if orientation == 'horizontal':
+    if orientation == 'vertical':
         if w == 0: w = 432
         if h == 0: h = 368
     else:
